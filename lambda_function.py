@@ -3,9 +3,9 @@ import json
 def lambda_handler(event, context):
     # Obtener los parámetros de la solicitud, amount = 0 si no encuetra este valor
     body = json.loads(event['body'])
-    amount = float(body.get('amount'))
-    from_currency = body.get('from_currency')
-    to_currency = body.get('to_currency')
+    amount = float(body.get('amount', 0))
+    from_currency = body.get('from_currency','USD')
+    to_currency = body.get('to_currency','EUR')
 
     # Tasa de cambio fija para el ejemplo
     exchange_rates = {
