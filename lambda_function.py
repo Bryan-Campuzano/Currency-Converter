@@ -11,6 +11,10 @@ def lambda_handler(event, context):
     exchange_rates = {
         'USD': {'EUR': 0.93},
     }
+    
+    # Verificamos que todos los parámetros necesarios están presentes
+    if not from_currency or not to_currency or amount <= 0:
+        raise ValueError("Invalid input parameters")
 
     # Calcular la conversión, si se encuentran las divisas de conversion dentro del diccionario
     converted_amount = amount * exchange_rates[from_currency][to_currency]
