@@ -1,7 +1,7 @@
 
 # Currency Converter
 
-![alt text]()
+![alt text](https://github.com/Bryan-Campuzano/Currency-Converter/blob/old_main/Green%20Simple%20Money%20Investment%20Tips%20YouTube%20Thumbnail.png)
 
 This project provides a simple implementation of a currency converter deployed using AWS Lambda and Terraform. It is designed for practicing DevOps workflows.
 
