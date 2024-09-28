@@ -1,4 +1,19 @@
 
+resource "aws_lambda_function" "lambda_function" {
+  filename         = "lambda_function.zip"
+  function_name    = var.function_name
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "lambda_function.lambda_handler"
+  runtime          = "python3.8"
+  source_code_hash = filebase64sha256("lambda_function.zip")
+
+  environment {
+    variables = {
+      LOG_LEVEL = "DEBUG"
+    }
+  }
+}
+
 resource "aws_apigatewayv2_api" "api_gateway" {
   name          = var.api_name
   protocol_type = "HTTP"
