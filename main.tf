@@ -74,5 +74,5 @@ resource "aws_lambda_permission" "api_gateway_permission" {
 }
 
 output "api_endpoint" {
-  value = aws_apigatewayv2_api.api_gateway.api_endpoint
+  value = aws_apigatewayv2_api.api_gateway.api_endpoint 
 }
